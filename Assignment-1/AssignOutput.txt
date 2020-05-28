@@ -1,0 +1,52 @@
+Tests
+  safetail tests
+    (safetail [3]) should be []:                                OK
+    (safetail [1,2,3]) should be [2,3]:                         OK
+  safetail' tests
+    (safetail' [3]) should be []:                               OK
+    (safetail' [1,2,3]) should be [2,3]:                        OK
+  safetail'' tests
+    (safetail'' [3]) should be []:                              OK
+    (safetail'' [1,2,3]) should be [2,3]:                       OK
+  ||| tests
+    (True ||| True) should be True:                             OK
+    (True ||| False) should be True:                            OK
+    (False ||| True) should be True:                            OK
+    (False ||| False) should be False:                          OK
+  |||| tests
+    (True |||| True) should be True:                            OK
+    (True |||| False) should be True:                           OK
+    (False |||| True) should be True:                           OK
+    (False |||| False) should be False:                         OK
+  ||||| tests
+    (True ||||| True) should be True:                           OK
+    (True ||||| False) should be True:                          OK
+    (False ||||| True) should be True:                          OK
+    (False ||||| False) should be False:                        OK
+  &&& tests
+    (True &&& True) should be True:                             OK
+    (True &&& False) should be False:                           OK
+    (False &&& True) should be False:                           OK
+    (False &&& False) should be False:                          OK
+  &&&& tests
+    (True &&& True) should be True:                             OK
+    (True &&&& False) should be False:                          OK
+    (False &&&& True) should be False:                          OK
+    (False &&&& False) should be False:                         OK
+  pyths tests
+    (pyths 5) should be [(3,4,5),(4,3,5)]:                      OK
+    (pyths 13) should be [(3,4,5),(4,3,5),(5,12,13),(12,5,13)]: OK
+    (pyths 0) should be []:                                     OK
+  perfects tests
+
+    (perfects 100) should be [6,28]:                            OK
+    (perfects 500) should be [6,28,496]:                        OK
+    (perfects 0) should be []:                                  OK
+  isPrefixOfTests tests
+    (isPrefixOf [1,2,3] [1,2,3,4,5,6]) should be True:          OK
+    (isPrefixOf [1,2,3] [1,2,2,4,5,6]) should be False:         OK
+    (isPrefixOf [hello [hello world]) should be True:           OK
+    (isPrefixOf [helslo] [hello world]) should be False:        OK
+    (isPrefixOf [] [1,2,3,4,5,6]) should be True:               OK
+
+All 37 tests passed (0.02s)

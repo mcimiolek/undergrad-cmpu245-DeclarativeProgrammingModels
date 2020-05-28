@@ -1,0 +1,34 @@
+Diff_tree Tests
+  conversions between Int and Diff_tree
+    (value_of One) should be 1:                                           OK
+    (value_of (zero 42)) should be 0:                                     OK
+    (value_of (zero (-5))) should be 0:                                   OK
+    (value_of (int2dt 42)) should be 42:                                  OK
+    (value_of (int2dt 0)) should be 0:                                    OK
+    (value_of (int2dt (-5))) should be -5:                                OK
+  Natural number interface tests for Diff_trees
+    (value_of (successor One)) should be 2:                               OK
+    (value_of (predessor One)) should be 0:                               OK
+    (value_of (successor (int2dt (-1)))) should be 0:                     OK
+    (value_of (predecessor One)) should be 0:                             OK
+    (value_of (predecessor (int2dt (-1)))) should be -2:                  OK
+    (value_of (successor (int2dt(0)))) should be 1:                       OK
+    (value_of (predessor (int2dt(0)))) should be -1:                      OK
+    (is_zero (int2dt(0))) should be True:                                 OK
+    (is_zero (int2dt(-1))) should be False:                               OK
+    (is_zero (int2dt(1))) should be False:                                OK
+  Tests for diff_tree_plus and diff_tree_minus
+    (value_of(diff_tree_plus (int2dt(10)) (int2dt(10)))) should be 20:    OK
+    (value_of(diff_tree_plus (int2dt(-10)) (int2dt(-10)))) should be -20: OK
+    (value_of(diff_tree_plus (int2dt(10)) (int2dt(-10)))) should be 0:    OK
+    (value_of(diff_tree_plus (int2dt(-10)) (int2dt(10)))) should be 0:    OK
+    (value_of(diff_tree_plus (int2dt(10)) (int2dt(-5)))) should be 5:     OK
+    (value_of(diff_tree_plus (int2dt(-5)) (int2dt(10)))) should be 5:     OK
+    (value_of(diff_tree_minus (int2dt(10)) (int2dt(10)))) should be 0:    OK
+    (value_of(diff_tree_minus (int2dt(-10)) (int2dt(-10)))) should be 0:  OK
+    (value_of(diff_tree_minus (int2dt(10)) (int2dt(-10)))) should be 20:  OK
+    (value_of(diff_tree_minus (int2dt(-10)) (int2dt(10)))) should be -20: OK
+    (value_of(diff_tree_minus (int2dt(10)) (int2dt(-5)))) should be 15:   OK
+    (value_of(diff_tree_minus (int2dt(-5)) (int2dt(10)))) should be -15:  OK
+
+All 28 tests passed (0.00s)

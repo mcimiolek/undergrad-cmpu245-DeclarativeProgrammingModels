@@ -1,0 +1,3 @@
+% c:/users/mcimi/onedrive/documents/prolog/assign3-matthewimiolek compiled 0.00 sec, -2 clauses
+% PL-Unit: asmt4 .......... done
+% All 10 tests passed

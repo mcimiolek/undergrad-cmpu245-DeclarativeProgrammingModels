@@ -1,0 +1,153 @@
+% c:/users/matthew/documents/prolog/asignment 4 compiled 0.03 sec, 10 clauses
+?- output.
+
+-----------------------
+ CMPU-245, Fall 2018
+ Asmt. 4 Matthew Imiolek
+-----------------------
+
+PROBLEM ONE:  Testing prereqs:
+  prereqs(cs101,[])
+  prereqs(cs102,[cs101])
+  prereqs(cs145,[cs101])
+  prereqs(cs203,[cs102])
+  prereqs(cs224,[cs102,cs145])
+  prereqs(cs240,[cs102,cs145])
+  prereqs(cs245,[cs102,cs145])
+  prereqs(cs365,[cs145,cs203,cs245])
+  prereqs(cs375,[cs203])
+  prereqs(cs377,[cs203,cs224])
+  not prereqs(cs102,[])
+  not prereqs(cs245,[cs101,cs102])
+  not prereqs(cs375,[cs240,cs145])
+
+PROBLEM TWO:  Testing canTake:
+  canTake(cs101,[],3)
+  canTake(cs102,[cs101],2)
+  canTake(cs203,[cs102],1)
+  canTake(cs245,[cs102,cs145],7)
+  canTake(cs365,[cs145,cs203,cs245],8)
+  NOT canTake(cs245,[cs101,cs102],4)
+  NOT canTake(cs377,[cs240,cs245],5)
+  NOT canTake(cs145,[cs240],6)
+  NOT canTake(cs250,[cs102],2)
+  NOT canTake(cs377,[cs203,cs224],1)
+
+PROBLEM THREE:  Testing selectCourse:
+  selectCourse(cs101,[],[cs101,cs102,cs145],[cs102,cs145],1)
+  selectCourse(cs102,[cs101],[cs102],[],3)
+  selectCourse(cs377,[cs203,cs102,cs224],[cs240,cs377,cs102,cs203,cs145,cs224],[cs240,cs102,cs203,cs145,cs224],7)
+  NOT selectCourse(N/A,_3812,[cs203,cs102],[cs377,cs102,cs145,cs224],N/A)
+  NOT selectCourse(N/A,_3854,[cs203,cs102,cs224],[cs377],N/A)
+
+PROBLEM FOUR:  Testing fillSched:
+Test 0: 
+Semester 1: [cs101] 
+Semester 2: [cs145,cs102] 
+Semester 3: [cs224,cs203] 
+Semester 4: [cs235,cs240] 
+Semester 5: [cs376,cs241] 
+Semester 6: [cs366,cs331] 
+Semester 7: [cs334] 
+Semester 8: [] 
+[1/[cs101],2/[cs145,cs102],3/[cs224,cs203],4/[cs235,cs240],5/[cs376,cs241],6/[cs366,cs331],7/[cs334],8/[]]
+
+Test 1: 
+Semester 1: [cs101] 
+Semester 2: [cs102,cs145] 
+Semester 3: [cs203,cs224] 
+Semester 4: [cs240,cs235] 
+Semester 5: [cs241,cs376] 
+Semester 6: [cs331,cs366] 
+Semester 7: [cs334] 
+Semester 8: [] 
+[1/[cs101],2/[cs102,cs145],3/[cs203,cs224],4/[cs240,cs235],5/[cs241,cs376],6/[cs331,cs366],7/[cs334],8/[]]
+
+Test 2: 
+Semester 1: [cs101] 
+Semester 2: [cs145,cs102] 
+Semester 3: [cs224,cs203] 
+Semester 4: [cs241,cs240,cs235] 
+Semester 5: [cs334,cs376] 
+Semester 6: [cs331,cs366] 
+Semester 7: [] 
+Semester 8: [] 
+[1/[cs101],2/[cs145,cs102],3/[cs224,cs203],4/[cs241,cs240,cs235],5/[cs334,cs376],6/[cs331,cs366],7/[],8/[]]
+
+Test 3: 
+Semester 1: [cs101] 
+Semester 2: [cs145,cs102] 
+Semester 3: [cs224,cs203] 
+Semester 4: [cs241,cs240,cs235] 
+Semester 5: [cs334,cs376] 
+Semester 6: [cs331,cs366] 
+Semester 7: [] 
+Semester 8: [] 
+[1/[cs101],2/[cs145,cs102],3/[cs224,cs203],4/[cs241,cs240,cs235],5/[cs334,cs376],6/[cs331,cs366],7/[],8/[]]
+
+Test 4: 
+This test returns not fillSched 
+False
+
+Test 5: 
+This test returns not fillSched 
+False
+
+Test 6: 
+This test returns not fillSched 
+False
+
+Test 7: 
+Semester 1: [cs101] 
+Semester 2: [cs102,cs145] 
+Semester 3: [cs224,cs241] 
+Semester 4: [cs240,cs235] 
+Semester 5: [cs203,cs376] 
+Semester 6: [cs331,cs366] 
+Semester 7: [cs334] 
+Semester 8: [] 
+[1/[cs101],2/[cs102,cs145],3/[cs224,cs241],4/[cs240,cs235],5/[cs203,cs376],6/[cs331,cs366],7/[cs334],8/[]]
+
+
+PROBLEM FIVE:  Testing MakeSched:
+Semester 1: [cs101] 
+Semester 2: [cs145,cs102] 
+Semester 3: [cs240,cs224,cs203] 
+Semester 4: [cs331,cs241] 
+Semester 5: [cs334] 
+Semester 6: [] 
+Semester 7: [cs377,cs245] 
+Semester 8: [cs365] 
+  makeSched(3,cs245,cs365,cs377,[1/[cs101],2/[cs145,cs102],3/[cs240,cs224,cs203],4/[cs331,cs241],5/[cs334],6/[],7/[cs377,cs245],8/[cs365]])
+
+Semester 1: [cs101] 
+Semester 2: [cs145,cs102] 
+Semester 3: [cs241,cs240,cs224,cs203] 
+Semester 4: [cs331,cs235] 
+Semester 5: [cs334] 
+Semester 6: [cs366,cs353] 
+Semester 7: [] 
+Semester 8: [] 
+  makeSched(4,cs235,cs353,cs366,[1/[cs101],2/[cs145,cs102],3/[cs241,cs240,cs224,cs203],4/[cs331,cs235],5/[cs334],6/[cs366,cs353],7/[],8/[]])
+
+Semester 1: [cs101] 
+Semester 2: [cs145,cs102] 
+Semester 3: [cs224,cs203] 
+Semester 4: [cs241,cs240] 
+Semester 5: [cs375,cs334] 
+Semester 6: [cs331] 
+Semester 7: [cs245,cs376] 
+Semester 8: [] 
+  makeSched(2,cs245,cs375,cs376,[1/[cs101],2/[cs145,cs102],3/[cs224,cs203],4/[cs241,cs240],5/[cs375,cs334],6/[cs331],7/[cs245,cs376],8/[]])
+
+  NOT makeSched(3,cs250,cs234,cs235,N/A)
+
+  NOT makeSched(3,cs235,cs365,cs203,N/A)
+
+  NOT makeSched(2,cs250,cs224,cs353,N/A)
+
+  NOT makeSched(2,cs331,cs378,cs379,N/A)
+
+true.
+
+?- 
